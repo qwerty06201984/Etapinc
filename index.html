@@ -18,31 +18,27 @@
       max-width: 100%;
       max-height: 95vh;
       object-fit: contain;
-      border-radius: 12px;
-      box-shadow: 0 6px 18px rgba(0,0,0,0.25),
-                  inset 0 2px 6px rgba(255,255,255,0.6),
-                  inset 0 -3px 6px rgba(0,0,0,0.15);
-      transition: transform 0.35s ease, box-shadow 0.35s ease;
+      border-radius: 8px;
+      box-shadow: 0 4px 12px rgba(0, 102, 255, 0.25),
+                  inset 0 2px 5px rgba(255,255,255,0.6),
+                  inset 0 -2px 5px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
 
     .carousel-item img:hover {
-      transform: scale(1.05);
-      box-shadow: 0 10px 28px rgba(0,0,0,0.35),
-                  inset 0 3px 8px rgba(255,255,255,0.7),
-                  inset 0 -4px 8px rgba(0,0,0,0.2);
+      transform: scale(1.03);
+      box-shadow: 0 8px 18px rgba(0, 102, 255, 0.35),
+                  inset 0 3px 6px rgba(255,255,255,0.7),
+                  inset 0 -3px 6px rgba(0,0,0,0.15);
     }
 
-    .carousel-inner {
-      padding-bottom: 10px;
-    }
-
-    /* Indicators + Play button row container */
+    /* Indicators + Play button row */
     .carousel-footer {
       display: flex;
       justify-content: center;
       align-items: center;
-      gap: 12px;
-      margin-top: 10px;
+      gap: 8px;
+      margin-bottom: 6px;
     }
 
     /* Indicators */
@@ -50,12 +46,12 @@
       position: static;
       margin: 0;
       display: flex;
-      gap: 8px;
+      gap: 5px;
     }
 
     .carousel-indicators [data-bs-target] {
-      width: 12px;
-      height: 12px;
+      width: 8px;
+      height: 8px;
       border-radius: 50%;
       background-color: grey;
     }
@@ -64,57 +60,81 @@
       background-color: #0d6efd;
     }
 
-    /* Elegant Minimal Play Button */
+    /* Play/Pause Button (smaller) */
     .pause-btn {
       background: rgba(255, 255, 255, 0.2);
       color: #333;
       border: 1px solid rgba(255,255,255,0.4);
       border-radius: 50%;
-      width: 38px;
-      height: 38px;
-      font-size: 14px;
-      backdrop-filter: blur(8px);
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
-      transition: all 0.3s ease;
+      width: 26px;
+      height: 26px;
+      font-size: 11px;
+      backdrop-filter: blur(6px);
+      box-shadow: 0 0 6px rgba(0,0,0,0.1);
+      transition: all 0.25s ease;
       display: flex;
       justify-content: center;
       align-items: center;
+      line-height: 1;
+      padding: 0;
     }
 
     .pause-btn:hover {
       background: rgba(255, 255, 255, 0.35);
-      transform: scale(1.1);
-      box-shadow: 0 0 12px rgba(0,0,0,0.15);
+      transform: scale(1.05);
+      box-shadow: 0 0 8px rgba(0,0,0,0.15);
     }
 
-    /* Arrows */
-    .carousel-control-prev-icon,
-    .carousel-control-next-icon {
-      background-size: 60% 60%;
-      filter: invert(1);
-    }
-
+    /* Arrows smaller */
     .carousel-control-prev,
     .carousel-control-next {
-      width: 60px;
+      width: 40px;
     }
 
     .carousel-control-prev-icon,
     .carousel-control-next-icon {
+      background-size: 50% 50%;
       background-color: rgba(0,0,0,0.4);
       border-radius: 50%;
-      padding: 20px;
-      box-shadow: 0 0 8px rgba(0,0,0,0.8);
+      padding: 12px;
+      box-shadow: 0 0 6px rgba(0,0,0,0.6);
+    }
+
+    /* Toggle button (smaller pill) */
+    .toggle-btn {
+      margin-bottom: 6px;
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+      background: #0d6efd;
+      color: white;
+      border: none;
+      padding: 3px 10px;
+      border-radius: 14px;
+      font-size: 11px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    .toggle-btn:hover {
+      background: #0b5ed7;
     }
   </style>
 </head>
 <body>
 
-<div class="container-fluid my-4">
-  <h3 class="text-center mb-3"></h3>
+<div class="container-fluid my-3">
+  <!-- Toggle Button -->
+  <button id="toggleControls" class="toggle-btn">Hide Controls</button>
 
   <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel" data-bs-interval="5000">
     
+    <!-- Indicators + Play button row -->
+    <div class="carousel-footer" id="controlsRow">
+      <div class="carousel-indicators"></div>
+      <button id="pauseButton" class="pause-btn" title="Pause">❚❚</button>
+    </div>
+
     <div class="carousel-inner">
       <div class="carousel-item active">
         <img src="https://i.ibb.co/dsbkmvGt/Copy-of-ALARM-SYSTEM-INSTALLATION-AND-Manual-Quick-Guide-docx-2-pdf-Page-1.jpg" alt="Page 1">
@@ -146,12 +166,6 @@
     <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
       <span class="carousel-control-next-icon"></span>
     </button>
-
-    <!-- Indicators + Play button row -->
-    <div class="carousel-footer">
-      <div class="carousel-indicators"></div>
-      <button id="pauseButton" class="pause-btn" title="Pause">❚❚</button>
-    </div>
   </div>
 </div>
 
@@ -185,14 +199,28 @@
   pauseBtn.addEventListener("click", () => {
     if (isPaused) {
       bsCarousel.cycle();
-      pauseBtn.textContent = "❚❚"; // pause icon
+      pauseBtn.textContent = "❚❚";
       pauseBtn.title = "Pause";
     } else {
       bsCarousel.pause();
-      pauseBtn.textContent = "▶"; // play icon
+      pauseBtn.textContent = "▶";
       pauseBtn.title = "Play";
     }
     isPaused = !isPaused;
+  });
+
+  // Toggle controls visibility
+  const toggleBtn = document.getElementById("toggleControls");
+  const controlsRow = document.getElementById("controlsRow");
+
+  toggleBtn.addEventListener("click", () => {
+    if (controlsRow.style.display === "none") {
+      controlsRow.style.display = "flex";
+      toggleBtn.textContent = "Hide Controls";
+    } else {
+      controlsRow.style.display = "none";
+      toggleBtn.textContent = "Show Controls";
+    }
   });
 </script>
 
