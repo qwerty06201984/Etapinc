@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!DOCTYPE html> 
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -24,6 +24,11 @@
                   inset 0 2px 6px rgba(255,255,255,0.6), 
                   inset 0 -3px 6px rgba(0,0,0,0.15);
       transition: transform 0.35s ease, box-shadow 0.35s ease;
+
+      /* High-quality rendering */
+      image-rendering: auto;
+      -webkit-backface-visibility: hidden;
+      transform: translateZ(0);
     }
 
     /* 📌 Hover zoom effect */
@@ -36,17 +41,17 @@
 
     /* 📌 Indicators nasa taas */
     .carousel-indicators {
-      position: static;     /* nasa taas hindi overlay */
-      margin-bottom: 5px;   /* dito pwede ibaba o itaas (palitan value) */
+      position: static;     
+      margin-bottom: 5px;   
       display: flex;
       justify-content: center;
-      gap: 4px; /* layo ng bilog sa isa’t isa */
+      gap: 4px; 
     }
 
     /* 📌 Lapad at laki ng indicator bilog */
     .carousel-indicators [data-bs-target] {
-      width: 8px;   /* mas maliit */
-      height: 8px;  /* mas maliit */
+      width: 8px;  
+      height: 8px; 
       border-radius: 50%;
       background-color: grey;
     }
@@ -57,7 +62,7 @@
     /* 📌 Controls (arrow buttons) */
     .carousel-control-prev,
     .carousel-control-next {
-      width: 40px; /* paliitin pa kung gusto (default dati 60px) */
+      width: 40px; 
     }
 
     /* 📌 Itsura ng arrow icons */
@@ -66,7 +71,7 @@
       background-size: 60% 60%;
       background-color: rgba(0,0,0,0.4);
       border-radius: 50%;
-      padding: 12px; /* paliitin o palakihin depende */
+      padding: 12px; 
       box-shadow: 0 0 6px rgba(0,0,0,0.8);
       filter: invert(1);
     }
@@ -82,30 +87,109 @@
     <!-- 📌 Indicators nasa taas -->
     <div class="carousel-indicators"></div>
 
-    <!-- 📌 Images -->
+    <!-- 📌 Images with srcset for high quality -->
     <div class="carousel-inner">
       <div class="carousel-item active">
-        <img src="https://i.ibb.co/dsbkmvGt/Copy-of-ALARM-SYSTEM-INSTALLATION-AND-Manual-Quick-Guide-docx-2-pdf-Page-1.jpg" alt="Page 1">
+        <img 
+          src="https://i.ibb.co/MzPqpB9/Intrusion-Alarm-System-Quick-Guide-User-s-Manual-For-Review-with-Sir-Seph-docx-1.png" 
+          srcset="
+            https://i.ibb.co/MzPqpB9/Intrusion-Alarm-System-Quick-Guide-User-s-Manual-For-Review-with-Sir-Seph-docx-1.png 1x,
+            https://i.ibb.co/MzPqpB9/Intrusion-Alarm-System-Quick-Guide-User-s-Manual-For-Review-with-Sir-Seph-docx-1.png 2x
+          "
+          alt="Page 1">
       </div>
       <div class="carousel-item">
-        <img src="https://i.ibb.co/5xtkQK8J/Copy-of-ALARM-SYSTEM-INSTALLATION-AND-Manual-Quick-Guide-docx-2-pdf-Page-2.jpg" alt="Page 2">
+        <img 
+          src="https://i.ibb.co/TMSPqPRN/Intrusion-Alarm-System-Quick-Guide-User-s-Manual-For-Review-with-Sir-Seph-docx-2.png" 
+          srcset="
+            https://i.ibb.co/TMSPqPRN/Intrusion-Alarm-System-Quick-Guide-User-s-Manual-For-Review-with-Sir-Seph-docx-2.png 1x,
+            https://i.ibb.co/TMSPqPRN/Intrusion-Alarm-System-Quick-Guide-User-s-Manual-For-Review-with-Sir-Seph-docx-2.png 2x
+          "
+          alt="Page 2">
       </div>
       <div class="carousel-item">
-        <img src="https://i.ibb.co/5x9Wt2fk/Copy-of-ALARM-SYSTEM-INSTALLATION-AND-Manual-Quick-Guide-docx-2-pdf-Page-3.jpg" alt="Page 3">
+        <img 
+          src="https://i.ibb.co/Xr2D1WLV/Intrusion-Alarm-System-Quick-Guide-User-s-Manual-For-Review-with-Sir-Seph-docx-3.png"
+          srcset="
+            https://i.ibb.co/Xr2D1WLV/Intrusion-Alarm-System-Quick-Guide-User-s-Manual-For-Review-with-Sir-Seph-docx-3.png 1x,
+            https://i.ibb.co/Xr2D1WLV/Intrusion-Alarm-System-Quick-Guide-User-s-Manual-For-Review-with-Sir-Seph-docx-3.png 2x
+          "
+          alt="Page 3">
       </div>
       <div class="carousel-item">
-        <img src="https://i.ibb.co/9HRXpxXk/Copy-of-ALARM-SYSTEM-INSTALLATION-AND-Manual-Quick-Guide-docx-2-pdf-Page-4.jpg" alt="Page 4">
+        <img 
+          src="https://i.ibb.co/QFqBWq3g/Intrusion-Alarm-System-Quick-Guide-User-s-Manual-For-Review-with-Sir-Seph-docx-4.png"
+          srcset="
+            https://i.ibb.co/QFqBWq3g/Intrusion-Alarm-System-Quick-Guide-User-s-Manual-For-Review-with-Sir-Seph-docx-4.png 1x,
+            https://i.ibb.co/QFqBWq3g/Intrusion-Alarm-System-Quick-Guide-User-s-Manual-For-Review-with-Sir-Seph-docx-4.png 2x
+          "
+          alt="Page 4">
       </div>
       <div class="carousel-item">
-        <img src="https://i.ibb.co/G4gBScNv/Copy-of-ALARM-SYSTEM-INSTALLATION-AND-Manual-Quick-Guide-docx-2-pdf-Page-5.jpg" alt="Page 5">
+        <img 
+          src="https://i.ibb.co/m5hhvbks/Intrusion-Alarm-System-Quick-Guide-User-s-Manual-For-Review-with-Sir-Seph-docx-5.png"
+          srcset="
+            https://i.ibb.co/m5hhvbks/Intrusion-Alarm-System-Quick-Guide-User-s-Manual-For-Review-with-Sir-Seph-docx-5.png 1x,
+            https://i.ibb.co/m5hhvbks/Intrusion-Alarm-System-Quick-Guide-User-s-Manual-For-Review-with-Sir-Seph-docx-5.png 2x
+          "
+          alt="Page 5">
       </div>
       <div class="carousel-item">
-        <img src="https://i.ibb.co/6JW4pBjB/Copy-of-ALARM-SYSTEM-INSTALLATION-AND-Manual-Quick-Guide-docx-2-pdf-Page-6.jpg" alt="Page 6">
+        <img 
+          src="https://i.ibb.co/HLHMvXbT/Intrusion-Alarm-System-Quick-Guide-User-s-Manual-For-Review-with-Sir-Seph-docx-6.png"
+          srcset="
+            https://i.ibb.co/HLHMvXbT/Intrusion-Alarm-System-Quick-Guide-User-s-Manual-For-Review-with-Sir-Seph-docx-6.png 1x,
+            https://i.ibb.co/HLHMvXbT/Intrusion-Alarm-System-Quick-Guide-User-s-Manual-For-Review-with-Sir-Seph-docx-6.png 2x
+          "
+          alt="Page 6">
       </div>
       <div class="carousel-item">
-        <img src="https://i.ibb.co/XZzkbY67/Copy-of-ALARM-SYSTEM-INSTALLATION-AND-Manual-Quick-Guide-docx-2-pdf-Page-7.jpg" alt="Page 7">
+        <img 
+          src="https://i.ibb.co/Hfsdr48v/Intrusion-Alarm-System-Quick-Guide-User-s-Manual-For-Review-with-Sir-Seph-docx-7.png"
+          srcset="
+            https://i.ibb.co/Hfsdr48v/Intrusion-Alarm-System-Quick-Guide-User-s-Manual-For-Review-with-Sir-Seph-docx-7.png 1x,
+            https://i.ibb.co/Hfsdr48v/Intrusion-Alarm-System-Quick-Guide-User-s-Manual-For-Review-with-Sir-Seph-docx-7.png 2x
+          "
+          alt="Page 7">
+          </div>
+      <div class="carousel-item">
+        <img 
+          src="https://i.ibb.co/ynnN7KG1/Intrusion-Alarm-System-Quick-Guide-User-s-Manual-For-Review-with-Sir-Seph-docx-8.png"
+          srcset="
+            https://i.ibb.co/ynnN7KG1/Intrusion-Alarm-System-Quick-Guide-User-s-Manual-For-Review-with-Sir-Seph-docx-8.png 1x,
+            https://i.ibb.co/ynnN7KG1/Intrusion-Alarm-System-Quick-Guide-User-s-Manual-For-Review-with-Sir-Seph-docx-8.png 2x
+          "
+          alt="Page 8">
+          </div>
+      <div class="carousel-item">
+        <img 
+          src="https://i.ibb.co/5XKbLDZ7/Intrusion-Alarm-System-Quick-Guide-User-s-Manual-For-Review-with-Sir-Seph-docx-9.png"
+          srcset="
+            https://i.ibb.co/5XKbLDZ7/Intrusion-Alarm-System-Quick-Guide-User-s-Manual-For-Review-with-Sir-Seph-docx-9.png 1x,
+            https://i.ibb.co/5XKbLDZ7/Intrusion-Alarm-System-Quick-Guide-User-s-Manual-For-Review-with-Sir-Seph-docx-9.png 2x
+          "
+          alt="Page 9">
+          </div>
+      <div class="carousel-item">
+        <img 
+          src="https://i.ibb.co/bjpMDyjg/Intrusion-Alarm-System-Quick-Guide-User-s-Manual-For-Review-with-Sir-Seph-docx-10.png"
+          srcset="
+            https://i.ibb.co/bjpMDyjg/Intrusion-Alarm-System-Quick-Guide-User-s-Manual-For-Review-with-Sir-Seph-docx-10.png 1x,
+            https://i.ibb.co/bjpMDyjg/Intrusion-Alarm-System-Quick-Guide-User-s-Manual-For-Review-with-Sir-Seph-docx-10.png 2x
+          "
+          alt="Page 10">
+          </div>
+      <div class="carousel-item">
+        <img 
+          src="https://i.ibb.co/NgkSythC/Intrusion-Alarm-System-Quick-Guide-User-s-Manual-For-Review-with-Sir-Seph-docx-11.png"
+          srcset="
+            https://i.ibb.co/NgkSythC/Intrusion-Alarm-System-Quick-Guide-User-s-Manual-For-Review-with-Sir-Seph-docx-11.png 1x,
+            https://i.ibb.co/NgkSythC/Intrusion-Alarm-System-Quick-Guide-User-s-Manual-For-Review-with-Sir-Seph-docx-11.png 2x
+          "
+          alt="Page 11">
       </div>
     </div>
+    
 
     <!-- 📌 Controls (arrow buttons left at right) -->
     <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
